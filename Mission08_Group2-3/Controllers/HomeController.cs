@@ -11,6 +11,17 @@ namespace Mission08_Group2_3.Controllers
         {
             _repo = temp;
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public IActionResult QuadrantView()
+        {
+            return View();
+        }
+=======
         public IActionResult Index()
         {
             ViewBag.Tasks = _repo.TempTask.FirstOrDefault(x => x.TaskId == "Criteria Here");
