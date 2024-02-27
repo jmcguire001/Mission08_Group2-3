@@ -21,7 +21,6 @@ namespace Mission08_Group2_3.Controllers
         {
             return View();
         }
-=======
         public IActionResult Index()
         {
             ViewBag.Tasks = _repo.TempTask.FirstOrDefault(x => x.TaskId == "Criteria Here");
