@@ -20,7 +20,7 @@ namespace Mission08_Group2_3.Controllers
         {
             return View();
         }
-=======
+
         public IActionResult Index()
         {
             return View();
