@@ -10,6 +10,17 @@ namespace Mission08_Group2_3.Controllers
         {
 
         }
+
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        public IActionResult QuadrantView()
+        {
+            return View();
+        }
+=======
         public IActionResult Index()
         {
             return View();
