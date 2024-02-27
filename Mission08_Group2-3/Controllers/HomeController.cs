@@ -6,16 +6,9 @@ namespace Mission08_Group2_3.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
-        }
 
-        public IActionResult Index()
-        {
-            return View();
         }
 
         public IActionResult Add()
@@ -24,6 +17,11 @@ namespace Mission08_Group2_3.Controllers
         }
 
         public IActionResult QuadrantView()
+        {
+            return View();
+        }
+=======
+        public IActionResult Index()
         {
             return View();
         }
