@@ -69,7 +69,7 @@ namespace Mission08_Group2_3.Controllers
             ViewBag.TasksQuadrant3 = tasksQuadrant3;
             ViewBag.TasksQuadrant4 = tasksQuadrant4;
 
-            return View(task);
+            return View();
         }
 
         [HttpGet]
