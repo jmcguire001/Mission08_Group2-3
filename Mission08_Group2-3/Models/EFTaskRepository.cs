@@ -1,4 +1,4 @@
-namespace ScaffoldingFun.Models
+namespace Mission08_Group2_3.Models
 {
     public class EFTaskRepository : ITaskRepository
     {
