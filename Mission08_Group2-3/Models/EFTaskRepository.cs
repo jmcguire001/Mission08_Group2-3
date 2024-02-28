@@ -10,7 +10,7 @@ namespace ScaffoldingFun.Models
         }
         public List<Task> Tasks => _context.Tasks.ToList();
 
-        public void AddManager(Task task)
+        public void AddTask(Task task)
         {
             _context.Add(task);
             _context.SaveChanges();
