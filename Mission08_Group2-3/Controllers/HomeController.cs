@@ -20,7 +20,7 @@ namespace Mission08_Group2_3.Controllers
         public IActionResult Index()
         {
             // This is temporary; updated this to actually show stuff later
-            ViewBag.Tasks = _repo.Tasks.FirstOrDefault(x => x.TaskId == "Criteria Here");
+            ViewBag.Tasks = _repo.Tasks.FirstOrDefault(x => x.TaskId.Equals("Criteria Here"));
 
             return View();
         }
@@ -40,8 +40,7 @@ namespace Mission08_Group2_3.Controllers
             // Check validations
             if (ModelState.IsValid)
             {
-                _repo.Tasks.Add(response);
-                _repo.SaveChanges(); // NEED TO ADD METHODS FOR SAVECHANGES AND SUCH
+                _repo.AddTask(response);
 
                 return View("Confirm", response); // WE NEED A CONFIRMATION PAGE
             }
@@ -69,21 +68,19 @@ namespace Mission08_Group2_3.Controllers
         [HttpGet]
         public IActionResult Edit(int id) // Parameter name needs to match the asp-action, which is id
         {
-            Task edit = _repo.Tasks.Single(x => x.TaskId == id); // This is a LINQ query that will return a single movie from the database
+            Mission08_Group2_3.Models.Task edit = _repo.Tasks.Single(x => x.TaskId == id); // This is a LINQ query that will return a single movie from the database
             ViewBag.Categories = _repo.Categories.ToList();
 
             return View("Add", edit);
         }
 
         [HttpPost]
-        public IActionResult Edit(Task update) // TASK WILL BE A PROBLEM, SO SPECIFY IT'S MISSION08_GROUP2_3.MODELS.TASK
+        public IActionResult Edit(Mission08_Group2_3.Models.Task update) // TASK WILL BE A PROBLEM, SO SPECIFY IT'S MISSION08_GROUP2_3.MODELS.TASK
         {
             // Check validations for updating
             if (ModelState.IsValid)
             {
-                _repo.Movies.Update(update);
-                _repo.SaveChanges();
-
+                _repo.UpdateTask(update); // NEED TO CREATE A METHOD IN THE REPO FOR UPDATING STUFF
 
                 return RedirectToAction("QuadrantView"); // Redirects to the Collection view
             }
@@ -105,11 +102,10 @@ namespace Mission08_Group2_3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Task remove)
+        public IActionResult Delete(Mission08_Group2_3.Models.Task remove)
         {
             // Delete the proper record
-            _repo.Tasks.Remove(remove);
-            _repo.SaveChanges();
+            _repo.DeleteTasks(remove); // NEED TO ADD A METHOD TO REMOVE TASKS
 
             // Redirect to the Collection view after deletion
             return RedirectToAction("QuadrantView");
