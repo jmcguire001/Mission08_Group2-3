@@ -20,7 +20,7 @@ namespace Mission08_Group2_3.Controllers
         public IActionResult Index()
         {
             // This is temporary; updated this to actually show stuff later
-            ViewBag.Tasks = _repo.TempTask.FirstOrDefault(x => x.TaskId == "Criteria Here");
+            ViewBag.Tasks = _repo.Tasks.FirstOrDefault(x => x.TaskId == "Criteria Here");
 
             return View();
         }
@@ -35,19 +35,20 @@ namespace Mission08_Group2_3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Task response)
+        public IActionResult Add(Mission08_Group2_3.Models.Task response)
         {
             // Check validations
             if (ModelState.IsValid)
             {
                 _repo.Tasks.Add(response);
-                _repo.SaveChanges();
+                _repo.SaveChanges(); // NEED TO ADD METHODS FOR SAVECHANGES AND SUCH
 
                 return View("Confirm", response); // WE NEED A CONFIRMATION PAGE
             }
             else
             {
                 ViewBag.Categories = _repo.Categories.ToList(); // Have to pass the view bag if it's not valid
+                // THERE WILL BE AN ERROR WITH CATEGORIES, STILL FIGURING THIS OUT
 
                 return View(response);
             }
@@ -75,7 +76,7 @@ namespace Mission08_Group2_3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Task update)
+        public IActionResult Edit(Task update) // TASK WILL BE A PROBLEM, SO SPECIFY IT'S MISSION08_GROUP2_3.MODELS.TASK
         {
             // Check validations for updating
             if (ModelState.IsValid)
