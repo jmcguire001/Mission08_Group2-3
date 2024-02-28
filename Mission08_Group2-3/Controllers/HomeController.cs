@@ -58,10 +58,17 @@ namespace Mission08_Group2_3.Controllers
         {
             ViewBag.Categories = _repo.Categories.ToList();
 
-            // This is a LINQ query that will return a list of movies from the Movie database
-            var task = _repo.Tasks
-                .OrderBy(x => x.TaskName).
-                ToList();
+            // Separate queries for each quadrant
+            var tasksQuadrant1 = _repo.Tasks.Where(task => task.Quadrant == 1).OrderBy(x => x.TaskName).ToList();
+            var tasksQuadrant2 = _repo.Tasks.Where(task => task.Quadrant == 2).OrderBy(x => x.TaskName).ToList();
+            var tasksQuadrant3 = _repo.Tasks.Where(task => task.Quadrant == 3).OrderBy(x => x.TaskName).ToList();
+            var tasksQuadrant4 = _repo.Tasks.Where(task => task.Quadrant == 4).OrderBy(x => x.TaskName).ToList();
+
+            // Pass the queries to their respective views
+            ViewBag.TasksQuadrant1 = tasksQuadrant1;
+            ViewBag.TasksQuadrant2 = tasksQuadrant2;
+            ViewBag.TasksQuadrant3 = tasksQuadrant3;
+            ViewBag.TasksQuadrant4 = tasksQuadrant4;
 
             return View(task);
         }

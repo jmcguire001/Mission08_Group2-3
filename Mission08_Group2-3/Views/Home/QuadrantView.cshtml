@@ -1,21 +1,115 @@
 ﻿@model List<Task>
 
+@* Table 1 *@
+<h2>Quadrant 1</h2>
 <table class="table table-bordered">
     <thead class="fw-bold">
         <tr>
             <td>Task Name</td>
             <td>Due Date</td>
+            <td>Quadrant</td>
             <td>Category</td>
             <td>Completed</td>
         </tr>
     </thead>
 
     <tbody>
-        @foreach (var listItem in Model)
+        @foreach (var listItem in ViewBag.TasksQuadrant1)
         {
             <tr>
                 <td>@listItem.TaskName</td>
                 <td>@listItem.DueDate</td>
+                <td>@listItem.Quadrant</td>
+                <td>@listItem.Category?.CategoryName</td>
+                <td>@listItem.Completed</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+            </tr>
+        }
+    <tbody>
+</table>
+
+@* Table 2 *@
+<h2>Quadrant 2</h2>
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Task Name</td>
+            <td>Due Date</td>
+            <td>Quadrant</td>
+            <td>Category</td>
+            <td>Completed</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var listItem in ViewBag.TasksQuadrant2)
+        {
+            <tr>
+                <td>@listItem.TaskName</td>
+                <td>@listItem.DueDate</td>
+                <td>@listItem.Quadrant</td>
+                <td>@listItem.Category?.CategoryName</td>
+                <td>@listItem.Completed</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+            </tr>
+        }
+    <tbody>
+</table>
+
+@* Table 3 *@
+<h2>Quadrant 3</h2>
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Task Name</td>
+            <td>Due Date</td>
+            <td>Quadrant</td>
+            <td>Category</td>
+            <td>Completed</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var listItem in ViewBag.TasksQuadrant3)
+        {
+            <tr>
+                <td>@listItem.TaskName</td>
+                <td>@listItem.DueDate</td>
+                <td>@listItem.Quadrant</td>
+                <td>@listItem.Category?.CategoryName</td>
+                <td>@listItem.Completed</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+            </tr>
+        }
+    <tbody>
+</table>
+
+@* Table 4 *@
+<h2>Quadrant 4</h2>
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Task Name</td>
+            <td>Due Date</td>
+            <td>Quadrant</td>
+            <td>Category</td>
+            <td>Completed</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var listItem in ViewBag.TasksQuadrant4)
+        {
+            <tr>
+                <td>@listItem.TaskName</td>
+                <td>@listItem.DueDate</td>
+                <td>@listItem.Quadrant</td>
                 <td>@listItem.Category?.CategoryName</td>
                 <td>@listItem.Completed</td>
 
