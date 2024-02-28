@@ -10,6 +10,8 @@ namespace Mission08_Group2_3.Models
         }
         public List<Task> Tasks => _context.Tasks.ToList(); // Returning a list of 'Task' entities from the database
 
+        public List<Category> Categories => throw new NotImplementedException();
+
         public void AddTask(Task task) // Method is responsible for adding a new task to the database
         {
             _context.Add(task);
@@ -26,6 +28,11 @@ namespace Mission08_Group2_3.Models
         { 
             _context.Remove(task);
             _context.SaveChanges();
+        }
+
+        public void DeleteTask(Task task)
+        {
+            throw new NotImplementedException();
         }
     }
 }
