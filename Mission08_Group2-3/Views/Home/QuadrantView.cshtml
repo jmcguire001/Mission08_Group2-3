@@ -1,5 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<Task>
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>Task Name</td>
+            <td>Due Date</td>
+            <td>Category</td>
+            <td>Completed</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var listItem in Model)
+        {
+            <tr>
+                <td>@listItem.TaskName</td>
+                <td>@listItem.DueDate</td>
+                <td>@listItem.Category?.CategoryName</td>
+                <td>@listItem.Completed</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+            </tr>
+        }
+    <tbody>
+</table>
