@@ -6,6 +6,6 @@ namespace Mission08_Group2_3.Models
     {
         [Key]
         public int CategoryId { get; set; }
-        public string? CategoryName { get; set; }
+        public string CategoryName { get; set; }
     }
 }

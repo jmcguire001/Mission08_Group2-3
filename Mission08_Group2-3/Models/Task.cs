@@ -8,19 +8,18 @@ namespace Mission08_Group2_3.Models
         [Key]
         [Required]
         public int TaskId { get; set; }
-        public string? TaskName { get; set; }
-        public DateTime? DueDate { get; set; }
+        [Required]
+        public string TaskName { get; set; }
 
-        [ForeignKey("QuadrantId")]
-        public int QuadrantId { get; set; } // Foreign key
-        public Quadrant? Quadrant { get; set; } // Navigation properties
+        public string? DueDate { get; set; }
+        [Required]
+        public int Quadrant { get; set; }
 
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; } // Foreign key
-        public Category? Category { get; set; } // Navigation properties
+        [ForeignKey("CategoryId")]
+        public int? CategoryId { get; set; }
+        public Category? Category { get; set; } 
 
-
-        public bool Completed { get; set; }
+        public bool? Completed { get; set; }
 
     }
 }
