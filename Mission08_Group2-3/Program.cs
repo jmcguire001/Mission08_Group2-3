@@ -1,7 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using Mission08_Group2_3.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MatrixContext>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:MatrixConnection"]);
+});
+
+// Every request will get a new instance of the repository EFTaskRepository that comes from ITaskRepository
+builder.Services.AddScoped<ITaskRepository, EFTaskRepository>(); // Add the repository to the services
 
 var app = builder.Build();
 
@@ -14,6 +25,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
