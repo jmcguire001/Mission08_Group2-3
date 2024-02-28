@@ -19,8 +19,8 @@ namespace Mission08_Group2_3.Controllers
 
         public IActionResult Index()
         {
-            // This is temporary; updated this to actually show stuff later
-            ViewBag.Tasks = _repo.TempTask.FirstOrDefault(x => x.TaskId == "Criteria Here");
+            // This is temporary; update this to actually show stuff later
+            ViewBag.Tasks = _repo.Tasks.FirstOrDefault(x => x.TaskId.Equals("Criteria Here"));
 
             return View();
         }
@@ -35,15 +35,15 @@ namespace Mission08_Group2_3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Task response)
+        public IActionResult Add(Mission08_Group2_3.Models.Task response)
         {
             // Check validations
             if (ModelState.IsValid)
             {
-                _repo.Tasks.Add(response);
-                _repo.SaveChanges();
+                // Add the new record; this action comes from ITasksRepository and EFTasksRepository
+                _repo.AddTask(response);
 
-                return View("Confirm", response); // WE NEED A CONFIRMATION PAGE
+                return View("Confirm", response);
             }
             else
             {
@@ -68,23 +68,23 @@ namespace Mission08_Group2_3.Controllers
         [HttpGet]
         public IActionResult Edit(int id) // Parameter name needs to match the asp-action, which is id
         {
-            Task edit = _repo.Tasks.Single(x => x.TaskId == id); // This is a LINQ query that will return a single movie from the database
+            // Have to use Mission08_Group2_3.Models.Task to ensure program isn't confused
+            Mission08_Group2_3.Models.Task edit = _repo.Tasks.Single(x => x.TaskId == id); // This is a LINQ query that will return a single task from the database
             ViewBag.Categories = _repo.Categories.ToList();
 
             return View("Add", edit);
         }
 
         [HttpPost]
-        public IActionResult Edit(Task update)
+        public IActionResult Edit(Mission08_Group2_3.Models.Task update)
         {
             // Check validations for updating
             if (ModelState.IsValid)
             {
-                _repo.Movies.Update(update);
-                _repo.SaveChanges();
+                // Update the proper record; this action comes from ITasksRepository and EFTasksRepository
+                _repo.UpdateTask(update);
 
-
-                return RedirectToAction("QuadrantView"); // Redirects to the Collection view
+                return RedirectToAction("QuadrantView"); // Redirects to the QuadrantView view
             }
             else
             {
@@ -104,11 +104,10 @@ namespace Mission08_Group2_3.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Task remove)
+        public IActionResult Delete(Mission08_Group2_3.Models.Task remove)
         {
-            // Delete the proper record
-            _repo.Tasks.Remove(remove);
-            _repo.SaveChanges();
+            // Delete the proper record; this action comes from ITasksRepository and EFTasksRepository
+            _repo.DeleteTask(remove);
 
             // Redirect to the Collection view after deletion
             return RedirectToAction("QuadrantView");

@@ -5,7 +5,7 @@ namespace Mission08_Group2_3.Models
     public class Category
     {
         [Key]
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } 
         public string CategoryName { get; set; }
     }
 }
