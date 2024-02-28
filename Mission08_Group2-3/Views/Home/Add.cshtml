@@ -2,20 +2,19 @@
     ViewData["Title"] = "Add a Task";
 }
 
-@* @model Model *@
+@model Mission08_Group2_3.Models.Task
 
 <div class="text-center">
     <h1 class="display-4">Add a Task</h1>
 </div>
 <div style="justify-content: center; display: flex">
     <form method="post" >
-        @* 
         <div class="form-group2">
             <input asp-for="TaskId" hidden /> 
         </div>
         <div class="form-group2">
-            <label asp-for="Task">Task: </label>
-            <input asp-for="Task" type="text" required />
+            <label asp-for="TaskName">Task: </label>
+            <input asp-for="TaskName" type="text" required />
         </div>
         <div class="form-group2">
             <label asp-for="DueDate">Due Date: </label>
@@ -41,7 +40,6 @@
                 <option value="true">Yes</option>
             </select>
         </div>
-        *@
         <button type="submit">Add Task</button>
     </form>
 </div>
