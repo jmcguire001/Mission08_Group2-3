@@ -13,18 +13,24 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
   margin-bottom: 60px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 a.button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #92b164;
     color: #fff;
     text-decoration: none;
     border: none;
@@ -32,9 +38,9 @@ a.button {
     cursor: pointer;
 }
 
-a.button:hover {
-    background-color: #0056b3;
-}
+    a.button:hover {
+        background-color: #738E44;
+    }
 
 .container2 {
     display: flex;
@@ -58,4 +64,8 @@ a.button:hover {
 
 .input2 {
     width: calc(100% - 100px); /* Calculate the width of inputs to fill the remaining space */
+}
+
+.content2 {
+    min-height: calc(100vh - 100px); /* Adjust 100px to the height of your footer */
 }

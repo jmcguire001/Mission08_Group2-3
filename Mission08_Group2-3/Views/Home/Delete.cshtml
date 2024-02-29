@@ -1,4 +1,9 @@
-﻿@model Mission08_Group2_3.Models.Task
+﻿@{
+    ViewData["Title"] = "Delete Task";
+}
+
+
+@model Mission08_Group2_3.Models.Task
 
 <div class="container">
     <div class="row">
@@ -13,7 +18,7 @@
                 <input type="hidden" asp-for="TaskId" />
 
                 <button type="submit">Delete</button>
-                <a class="btn btn-info" asp-controller="Home" asp-action="Index">Cancel</a>
+                <a class="btn btn-info" asp-controller="Home" asp-action="QuadrantView">Cancel</a>
             </form>
         </div>
     </div>
