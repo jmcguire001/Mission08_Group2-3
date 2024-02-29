@@ -9,7 +9,7 @@ namespace Mission08_Group2_3.Models
         [Required]
         public int TaskId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a Task")]
         public string TaskName { get; set; }
 
         public string? DueDate { get; set; }
@@ -21,7 +21,7 @@ namespace Mission08_Group2_3.Models
         
         public bool? Completed { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a Quadrant between 1 and 4")]
         public int Quadrant { get; set; }
     }
 }
