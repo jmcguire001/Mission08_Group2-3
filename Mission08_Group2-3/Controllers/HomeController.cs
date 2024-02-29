@@ -31,7 +31,7 @@ namespace Mission08_Group2_3.Controllers
             // Linq query to get all categories
             ViewBag.Categories = _repo.Categories.ToList();
 
-            return View();
+            return View(new Models.Task());
         }
 
         [HttpPost]
@@ -42,7 +42,6 @@ namespace Mission08_Group2_3.Controllers
             {
                 // Add the new record; this action comes from ITasksRepository and EFTasksRepository
                 _repo.AddTask(response);
-                _repo.SaveChanges();
 
                 return View("Confirmation", response);
             }
