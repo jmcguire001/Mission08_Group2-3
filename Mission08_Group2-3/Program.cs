@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// This essentially is setting up the Entity Framework Core to use the SQLite database.
 builder.Services.AddDbContext<MatrixContext>(options =>
 {
     options.UseSqlite(builder.Configuration["ConnectionStrings:MatrixConnection"]);
