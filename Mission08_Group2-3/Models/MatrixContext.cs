@@ -8,6 +8,7 @@ namespace Mission08_Group2_3.Models
         { 
         
         }
+        // Model to Database connection
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Category> Categories { get; set; }
     }
