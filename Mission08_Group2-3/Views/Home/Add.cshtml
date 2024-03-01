@@ -10,6 +10,7 @@
     </div>
     <div class="row" style="justify-content: center; display: flex">
         <div class="col-12">
+            <!-- Form to create a task with button and post method-->
             <form method="post">
                 <div class="form-group2">
                     <input asp-for="TaskId" hidden />
@@ -43,6 +44,8 @@
                         <option value="true">Yes</option>
                     </select>
                 </div>
+                <!-- This will show the validation errors -->
+                <div asp-validation-summary="All" style="font-style:italic; text-align: left; font-size: 12px; margin-top:20px;"></div>
                 <button type="submit">Submit Task</button>
             </form>
         </div>

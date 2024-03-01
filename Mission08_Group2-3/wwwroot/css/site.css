@@ -69,3 +69,7 @@ a.button {
 .content2 {
     min-height: calc(100vh - 100px); /* Adjust 100px to the height of your footer */
 }
+
+footer {
+    background-color: #fff;
+}
