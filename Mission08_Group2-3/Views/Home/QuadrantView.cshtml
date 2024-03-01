@@ -1,4 +1,4 @@
-﻿@model List<Task>
+﻿@model List<Mission08_Group2_3.Models.Task>
 
 @* Table 1 *@
 <h2>Quadrant 1</h2>
@@ -10,6 +10,8 @@
             <td>Quadrant</td>
             <td>Category</td>
             <td>Completed</td>
+            <td>Edit</td>
+            <td>Delete</td>
         </tr>
     </thead>
 
@@ -23,8 +25,8 @@
                 <td>@listItem.Category?.CategoryName</td>
                 <td>@listItem.Completed</td>
 
-                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
-                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.TaskId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.TaskId">Delete</a></td>
             </tr>
         }
     <tbody>
@@ -40,6 +42,8 @@
             <td>Quadrant</td>
             <td>Category</td>
             <td>Completed</td>
+            <td>Edit</td>
+            <td>Delete</td>
         </tr>
     </thead>
 
@@ -53,8 +57,8 @@
                 <td>@listItem.Category?.CategoryName</td>
                 <td>@listItem.Completed</td>
 
-                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
-                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.TaskId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.TaskId">Delete</a></td>
             </tr>
         }
     <tbody>
@@ -70,6 +74,8 @@
             <td>Quadrant</td>
             <td>Category</td>
             <td>Completed</td>
+            <td>Edit</td>
+            <td>Delete</td>
         </tr>
     </thead>
 
@@ -83,8 +89,8 @@
                 <td>@listItem.Category?.CategoryName</td>
                 <td>@listItem.Completed</td>
 
-                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
-                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.TaskId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.TaskId">Delete</a></td>
             </tr>
         }
     <tbody>
@@ -100,6 +106,8 @@
             <td>Quadrant</td>
             <td>Category</td>
             <td>Completed</td>
+            <td>Edit</td>
+            <td>Delete</td>
         </tr>
     </thead>
 
@@ -113,8 +121,8 @@
                 <td>@listItem.Category?.CategoryName</td>
                 <td>@listItem.Completed</td>
 
-                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.MovieId">Edit</a></td>
-                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.MovieId">Delete</a></td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@listItem.TaskId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@listItem.TaskId">Delete</a></td>
             </tr>
         }
     <tbody>

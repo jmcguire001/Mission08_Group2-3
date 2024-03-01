@@ -10,6 +10,8 @@ namespace Mission08_Group2_3.Models
         }
         public List<Task> Tasks => _context.Tasks.ToList(); // Returning a list of 'Task' entities from the database
 
+        public List<Category> Categories => _context.Categories.ToList();
+
         public void AddTask(Task task) // Method is responsible for adding a new task to the database
         {
             _context.Add(task);
@@ -22,7 +24,7 @@ namespace Mission08_Group2_3.Models
             _context.SaveChanges();
         }
 
-        public void RemoveTask(Task task) // Method is responsible for removing tasks to from the database
+        public void DeleteTask(Task task) // Method is responsible for removing tasks to from the database
         { 
             _context.Remove(task);
             _context.SaveChanges();

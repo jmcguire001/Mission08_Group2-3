@@ -13,10 +13,59 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
   margin-bottom: 60px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #92b164;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    a.button:hover {
+        background-color: #738E44;
+    }
+
+.container2 {
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.form2 {
+    width: 300px; /* Set width for the form */
+}
+
+.form-group2 {
+    margin-bottom: 15px; /* Add some vertical space between form groups */
+}
+
+.label2 {
+    display: inline-block;
+    width: 100px; /* Adjust the width of the labels as needed */
+}
+
+.input2 {
+    width: calc(100% - 100px); /* Calculate the width of inputs to fill the remaining space */
+}
+
+.content2 {
+    min-height: calc(100vh - 100px); /* Adjust 100px to the height of your footer */
 }

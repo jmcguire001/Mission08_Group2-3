@@ -28,14 +28,14 @@ namespace Mission08_Group2_3.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            // Linq query to get all tasks
+            // Linq query to get all categories
             ViewBag.Categories = _repo.Categories.ToList();
 
-            return View();
+            return View(new Models.Task());
         }
 
         [HttpPost]
-        public IActionResult Add(Mission08_Group2_3.Models.Task response)
+        public IActionResult Add(Models.Task response)
         {
             // Check validations
             if (ModelState.IsValid)
@@ -43,7 +43,7 @@ namespace Mission08_Group2_3.Controllers
                 // Add the new record; this action comes from ITasksRepository and EFTasksRepository
                 _repo.AddTask(response);
 
-                return View("Confirm", response);
+                return View("Confirmation", response);
             }
             else
             {

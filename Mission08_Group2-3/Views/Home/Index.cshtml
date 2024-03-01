@@ -2,8 +2,28 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Mission 8</h1>
-    <p>Do you have tasks you need to get done? <a asp-controller="Home" asp-action="Add">Add them here</a></p>
-    <p><a asp-controller="Home" asp-action="QuadrantView">View all tasks</a></p>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4">Welcome to Mission 8</h1>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-6">
+            <img src="~/water.jpg" style="max-width: 100%;" />
+        </div>
+
+        <div class="col-6" style="padding-top: 20px;">
+            @*Fun little paragraph to demonstrate our bootstrap grid*@
+            Using Covey's four quadrants from "The 7 Habits of Highly Effective People" can really amp up productivity. It's like a cheat code for getting stuff done. Quadrant I covers the urgent and important stuff that needs your immediate attention. Quadrant II is where the magic happens – it's about important but not urgent tasks that help you grow and plan ahead. By focusing on these, you prevent fires before they even start. Quadrants III and IV are where you can cut some slack – they're either urgent but not important or neither urgent nor important. By sorting tasks into these quadrants, you can make better decisions about where to direct your energy and time, leading to more productivity and less stress.
+            <div class="row mb-4" style="padding-top: 20px;">
+                <div class="col-6">
+                    <p><a asp-controller="Home" asp-action="Add" class="button">Add tasks here</a></p>
+                </div>
+                <div class="col-6">
+                    <p><a asp-controller="Home" asp-action="QuadrantView" class="button">View all tasks</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
